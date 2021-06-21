@@ -1,30 +1,13 @@
-const character = {
-  name: 'Лучник',
-  type: 'Bowman',
-  health: 50,
-  level: 3,
-  attack: 40,
-  defence: 10,
-  special: [
-    {
-      id: 8,
-      name: 'Двойной выстрел',
-      icon: 'http://...',
-      description: 'Двойной выстрел наносит двойной урон'
-    }, 
-    {
-      id: 9,
-      name: 'Нокаутирующий удар',
-      icon: 'http://...'
-    }
-  ]	
-};
-const keys = {id, name, description= 'не доступно', icon};
-function destructuringSpecials(obj, keys) {
+export default function destructuringSpecials(obj) {
   const result = [];
-  obj.special.forEach(element => {
-    console.log(element);
+  obj.special.forEach((element) => {
+    const {
+      id, name, description = 'не доступно', icon,
+    } = element;
+    const resObj = {
+      id, name, description, icon,
+    };
+    result.push(resObj);
   });
-};
-
-destructuringSpecials(character, keys);
+  return result;
+}
