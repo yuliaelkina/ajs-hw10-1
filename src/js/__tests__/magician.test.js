@@ -5,5 +5,5 @@ test('stoned attack counting', () => {
   Igor.attack = 100;
   Igor.distance = 2;
   Igor.stoned = true;
-  expect(Igor.atack).toBe(85);
-})
+  expect(Igor.attack).toBe(85);
+});

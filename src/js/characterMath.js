@@ -13,13 +13,11 @@ export default class CharacterMath extends Character {
     let percentage = 1;
     if (this.distance > 1) {
       percentage -= (this.distance - 1) * 0.1;
-      console.log(percentage);
-    };
-    const baseAttack = this._attack * Math.round(percentage);
-    console.log(baseAttack);
+    }
+    const baseAttack = Math.round(this._attack * percentage);
     let finalAttack = baseAttack;
     if (this.stoned === true) {
-      finalAttack = baseAttack - Math.round(Math.log2(this.distance) * 5);
+      finalAttack = Math.round(baseAttack - Math.log2(this.distance) * 5);
     }
     return finalAttack;
   }
