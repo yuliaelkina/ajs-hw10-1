@@ -6,6 +6,7 @@ export default class GameSavingLoader {
   static load() {
     const data = read();
     const value = json(data); 
+    console.log(value);
     const GameSaving = {
       "id": value.id,
       "created": value.created,
