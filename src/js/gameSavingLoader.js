@@ -1,13 +1,14 @@
+import { values } from "core-js/core/array";
 import json from "./parser";
 import read from "./reader";
 
 export default class GameSavingLoader {
 
   static load() {
-    const data = read();
-    const value = json(data); 
-    console.log(value);
-    const GameSaving = {
+    read()
+    .then((res) => {json(res)})
+    .then((value) => {
+      const GameSaving = {
       "id": value.id,
       "created": value.created,
       "userInfo": {
@@ -21,6 +22,6 @@ export default class GameSavingLoader {
       setTimeout(() => {
         resolve(GameSaving);
       }, 500);})
+    })
   }
-
 }
