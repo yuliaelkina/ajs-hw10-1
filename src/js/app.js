@@ -1,7 +1,7 @@
-import GameSavingLoader from "./gameSavingLoader";
+import GameSavingLoader from './gameSavingLoader';
 
 GameSavingLoader.load().then((saving) => {
   console.log(saving);
 }, (error) => {
-  throw new Error("невозможно загрузить");
+  throw new Error(error);
 });
