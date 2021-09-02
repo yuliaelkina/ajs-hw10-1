@@ -6,7 +6,7 @@ export default class GameSavingLoader {
   static load() {
     read()
       .then((res) => json(res))
-      .then((value) => game = new GameSaving({
+      .then((value) => {return game = new GameSaving({
         id: value.id,
         created: value.created,
         userInfo: {
@@ -15,11 +15,6 @@ export default class GameSavingLoader {
           level: value.userInfo.level,
           points: value.userInfo.points,
         },
-      })
-      .then((game) => {
-        setTimeout((resolve) => {
-          resolve(game);
-        }, 500);
-      }),);
+      });});
   }
 }
