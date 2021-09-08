@@ -4,7 +4,7 @@ import GameSaving from './gameSaving';
 
 export default class GameSavingLoader {
   static load() {
-    read()
+    return read()
       .then((res) => json(res))
       .then((value) => {return game = new GameSaving({
         id: value.id,
